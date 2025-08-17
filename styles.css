@@ -15,13 +15,12 @@ body {
   height: 100vh;
   background: #000 url('source/img/background-im-melted.jpg') no-repeat center center;
   background-size: cover;
-  transition: opacity 1s ease;
+  transition: transform 1s ease;
   z-index: 1000;
 }
 
 .full-screen-bg.hidden {
-  opacity: 0;
-  pointer-events: none;
+  transform: translateY(-100%);
 }
 
 .content {
@@ -32,23 +31,22 @@ body {
 }
 
 .animated-header {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 1s ease, transform 1s ease;
+  position: fixed;
+  top: -100px;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
   background: #111;
   border: 2px solid #fff;
-  position: sticky;
-  top: 0;
   z-index: 1001;
+  transition: top 1s ease;
 }
 
-.content.scrolled .animated-header {
-  opacity: 1;
-  transform: translateY(0);
+.animated-header.active {
+  top: 0;
 }
 
 .logo {

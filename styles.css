@@ -92,17 +92,20 @@ body {
 
 @media (max-width: 768px) {
   .animated-header {
-    padding: 10px; /* Solo reducimos el padding, sin apilar */
+    padding: 10px; /* Reducimos padding */
   }
   .logo {
-    max-width: 100px;
+    max-width: 80px; /* Logo más pequeño */
+  }
+  .nav {
+    gap: 5px; /* Espacio reducido entre enlaces */
   }
   .nav a {
-    font-size: 0.9em;
-    margin: 0 5px;
+    font-size: 0.8em; /* Fuente más pequeña */
+    margin: 0 2px; /* Menor margen */
   }
   .nav a:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Menor escalado */
   }
 }
 

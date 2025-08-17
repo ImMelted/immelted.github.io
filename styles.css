@@ -138,14 +138,24 @@ body {
   background: #222;
   border-radius: 5px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .track-item:nth-child(odd) {
-  align-self: flex-end; /* Izquierda para impares */
+  align-self: flex-end;
 }
 
 .track-item:nth-child(even) {
-  align-self: flex-start; /* Derecha para pares */
+  align-self: flex-start;
+}
+
+.track-cover {
+  max-width: 100%;
+  max-height: 200px; /* Límite para imágenes 1080x1080 */
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
@@ -155,6 +165,38 @@ body {
   }
   .track-item:nth-child(odd),
   .track-item:nth-child(even) {
-    align-self: center; /* Centrado en móviles para simplicidad */
+    align-self: center;
+  }
+  .track-cover {
+    max-height: 150px; /* Ajuste para móviles */
+  }
+}
+
+/* Estilos para la sección "Sobre mí" */
+.about-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: #222;
+  border-radius: 5px;
+}
+
+.about-section h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  font-size: 1em;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 15px;
+  }
+  .about-section p {
+    font-size: 0.9em;
   }
 }

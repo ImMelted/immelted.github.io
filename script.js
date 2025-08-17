@@ -1,11 +1,13 @@
 window.addEventListener('scroll', function() {
   const bg = document.querySelector('.full-screen-bg');
-  const content = document.querySelector('.content');
-  if (window.scrollY > 50) {
+  const header = document.querySelector('.animated-header');
+  const scrollPosition = window.scrollY;
+
+  if (scrollPosition > 50) {
     bg.classList.add('hidden');
-    content.classList.add('scrolled');
+    header.classList.add('active');
   } else {
     bg.classList.remove('hidden');
-    content.classList.remove('scrolled');
+    header.classList.remove('active');
   }
 });

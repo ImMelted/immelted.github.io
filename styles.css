@@ -38,7 +38,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 20px; /* Reducido padding para móviles */
+  padding: 15px 20px;
   background: #111;
   border: 2px solid #fff;
   z-index: 1001;
@@ -51,7 +51,7 @@ body {
 }
 
 .logo {
-  max-width: 120px; /* Reducido para móviles */
+  max-width: 120px;
   height: auto;
 }
 
@@ -95,21 +95,66 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 10px; /* Más compacto en móviles */
+    padding: 10px;
   }
   .logo {
-    max-width: 100px; /* Aún más pequeño en móviles */
+    max-width: 100px;
   }
   .nav {
     margin-top: 10px;
-    flex-direction: column; /* Apila los enlaces verticalmente */
-    gap: 5px; /* Reduce el espacio entre enlaces */
+    flex-direction: column;
+    gap: 5px;
   }
   .nav a {
-    font-size: 0.9em; /* Fuente más pequeña para móviles */
-    margin: 0 5px; /* Espaciado lateral */
+    font-size: 0.9em;
+    margin: 0 5px;
   }
   .nav a:hover {
-    transform: scale(1.05); /* Menor escalado en móviles */
+    transform: scale(1.05);
+  }
+}
+
+/* Estilos para la sección de música */
+.music-section {
+  margin-top: 40px;
+}
+
+.music-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.track-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.track-item {
+  width: 80%;
+  max-width: 400px;
+  padding: 15px;
+  background: #222;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.track-item:nth-child(odd) {
+  align-self: flex-end; /* Izquierda para impares */
+}
+
+.track-item:nth-child(even) {
+  align-self: flex-start; /* Derecha para pares */
+}
+
+@media (max-width: 768px) {
+  .track-item {
+    width: 90%;
+    padding: 10px;
+  }
+  .track-item:nth-child(odd),
+  .track-item:nth-child(even) {
+    align-self: center; /* Centrado en móviles para simplicidad */
   }
 }

@@ -28,29 +28,27 @@
       opacity: 0;
       pointer-events: none;
     }
-    .content {
-      position: relative;
-      top: 100vh;
-      padding: 50px 20px;
-      text-align: center;
-    }
-    .animated-banner {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease, transform 1s ease;
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #111;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px;
-      background: #111;
-      border: 2px solid #fff;
+      opacity: 0;
+      transform: translateY(-100%);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      z-index: 2000;
     }
-    .content.scrolled .animated-banner {
+    .content.scrolled .header {
       opacity: 1;
       transform: translateY(0);
     }
     .logo {
-      max-width: 150px; /* Límite de imagen */
+      max-width: 150px;
       height: auto;
     }
     .nav {
@@ -65,24 +63,26 @@
     .nav a:hover {
       color: #ddd;
     }
-    h1 {
-      font-size: 3em;
-      margin: 0;
+    .content {
+      position: relative;
+      top: 100vh;
+      padding: 50px 20px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="full-screen-bg"></div>
-  <div class="content">
-    <div class="animated-banner">
-      <img src="source/img/logo-im-melted.png" alt="Im Melted Logo" class="logo">
-      <div class="nav">
-        <a href="#home">HOME</a> |
-        <a href="#music">Music</a> |
-        <a href="#about">About</a> |
-        <a href="#contact">Contact</a>
-      </div>
+  <div class="header">
+    <img src="source/img/logo-im-melted.png" alt="Im Melted Logo" class="logo">
+    <div class="nav">
+      <a href="#home">HOME</a> |
+      <a href="#music">Music</a> |
+      <a href="#about">About</a> |
+      <a href="#contact">Contact</a>
     </div>
+  </div>
+  <div class="content">
     <p>Bienvenidos a mi canal. ¡Aquí encontrarás mis últimas pistas y más!</p>
   </div>
 

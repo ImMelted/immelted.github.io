@@ -58,18 +58,36 @@ body {
 .nav {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+  flex-wrap: wrap;
 }
 
 .nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.1em; /* Reducido para evitar desbordamiento */
-  white-space: nowrap; /* Evita que el texto se rompa */
+  font-size: 1.1em;
+  white-space: nowrap;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
 }
 
 .nav a:hover {
-  color: #ddd;
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+  color: #ddd; /* Opcional: cambia el color al hover */
 }
 
 @media (max-width: 768px) {
@@ -83,5 +101,8 @@ body {
   }
   .nav a {
     font-size: 1em;
+  }
+  .nav a:hover {
+    transform: scale(1.05); /* Ajuste para pantallas pequeñas */
   }
 }

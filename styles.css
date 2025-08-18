@@ -19,14 +19,19 @@ body.light-theme {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: #000 url('source/img/background-im-melted.jpg') no-repeat center center;
+  background: #000 url('source/img/background-im-melted-new.jpg') no-repeat center center;
   background-size: cover;
-  transition: transform 1s ease;
+  transition: transform 1s ease, background-image 0.3s ease;
   z-index: 1000;
 }
 
 .full-screen-bg.hidden {
   transform: translateY(-100%);
+}
+
+.full-screen-bg.light-theme {
+  background: #f0f0f0 url('source/img/background-im-melted-new-light.jpg') no-repeat center center;
+  /* Ajusta la imagen ligera si tienes una; si no, usa un color sólido */
 }
 
 .content {
@@ -74,9 +79,9 @@ body.light-theme {
 }
 
 .nav a {
-  color: #fff;
+  color: #00ffcc; /* Color neón para tema oscuro */
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: 1.2em; /* Tamaño ligeramente mayor */
   white-space: nowrap;
   position: relative;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -86,10 +91,10 @@ body.light-theme {
   content: '';
   position: absolute;
   width: 0;
-  height: 2px;
+  height: 4px; /* Línea más gruesa */
   bottom: -5px;
   left: 0;
-  background-color: #fff;
+  background-color: #ff00ff; /* Color vibrante para tema oscuro */
   transition: width 0.3s ease;
 }
 
@@ -99,19 +104,19 @@ body.light-theme {
 
 .nav a:hover {
   transform: scale(1.1);
-  color: #ddd;
+  color: #00cccc; /* Variación neón al hover */
 }
 
 .nav.light-theme a {
-  color: #333;
+  color: #006666; /* Tono oscuro para tema claro */
 }
 
 .nav.light-theme a::after {
-  background-color: #333;
+  background-color: #ff69b4; /* Rosa claro para tema claro */
 }
 
 .nav.light-theme a:hover {
-  color: #666;
+  color: #004d4d; /* Variación al hover */
 }
 
 @media (max-width: 768px) {
@@ -125,7 +130,7 @@ body.light-theme {
     gap: 5px;
   }
   .nav a {
-    font-size: 0.8em;
+    font-size: 0.9em; /* Ajuste para móviles */
     margin: 0 2px;
   }
   .nav a:hover {

@@ -51,7 +51,7 @@ body {
 }
 
 .logo {
-  max-width: 120px;
+  max-width: 100px;
   height: auto;
 }
 
@@ -62,7 +62,7 @@ body {
 }
 
 .nav a {
-  color: #ffffff; /* Blanco para tema oscuro */
+  color: #ffffff;
   text-decoration: none;
   font-size: 1.2em;
   white-space: nowrap;

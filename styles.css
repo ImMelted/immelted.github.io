@@ -169,10 +169,10 @@ body {
     align-self: center;
   }
   .track-cover {
-    max-height: 150px;
+    max-height: 100px;
   }
   .track-list {
-    width: 80%;
+    width: 100%;
   }
 }
 

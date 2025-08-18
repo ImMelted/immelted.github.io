@@ -5,6 +5,12 @@ body {
   color: #fff;
   overflow-x: hidden;
   background: #000;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme {
+  background: #f0f0f0;
+  color: #333;
 }
 
 .full-screen-bg {
@@ -42,7 +48,7 @@ body {
   background: #111;
   border: 2px solid #fff;
   z-index: 1001;
-  transition: top 1s ease;
+  transition: top 1s ease, background 0.3s ease, border-color 0.3s ease;
   box-sizing: border-box;
 }
 
@@ -50,9 +56,15 @@ body {
   top: 0;
 }
 
+.animated-header.light-theme {
+  background: #e0e0e0;
+  border-color: #333;
+}
+
 .logo {
   max-width: 120px;
   height: auto;
+  transition: opacity 0.3s ease;
 }
 
 .nav {
@@ -67,7 +79,7 @@ body {
   font-size: 1.1em;
   white-space: nowrap;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .nav a::after {
@@ -90,26 +102,41 @@ body {
   color: #ddd;
 }
 
+.nav.light-theme a {
+  color: #333;
+}
+
+.nav.light-theme a::after {
+  background-color: #333;
+}
+
+.nav.light-theme a:hover {
+  color: #666;
+}
+
 @media (max-width: 768px) {
   .animated-header {
-    padding: 10px; /* Reducimos padding */
+    padding: 10px;
   }
   .logo {
-    max-width: 80px; /* Logo más pequeño */
+    max-width: 80px;
   }
   .nav {
-    gap: 5px; /* Espacio reducido entre enlaces */
+    gap: 5px;
   }
   .nav a {
-    font-size: 0.8em; /* Fuente más pequeña */
-    margin: 0 2px; /* Menor margen */
+    font-size: 0.8em;
+    margin: 0 2px;
   }
   .nav a:hover {
-    transform: scale(1.05); /* Menor escalado */
+    transform: scale(1.05);
   }
 }
 
-/* Estilos para la sección de música */
+.animated-header.light-theme #theme-toggle {
+  color: #333;
+}
+
 .music-section {
   margin-top: 40px;
 }
@@ -136,6 +163,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  transition: background 0.3s ease;
+}
+
+.track-item.light-theme {
+  background: #ddd;
 }
 
 .track-item:nth-child(odd) {
@@ -167,12 +199,16 @@ body {
   }
 }
 
-/* Estilos para la sección "Sobre mí" */
 .about-section {
   margin-top: 40px;
   padding: 20px;
   background: #222;
   border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.about-section.light-theme {
+  background: #ddd;
 }
 
 .about-section h2 {
@@ -185,6 +221,7 @@ body {
   line-height: 1.5;
   max-width: 600px;
   margin: 0 auto;
+  color: inherit;
 }
 
 @media (max-width: 768px) {
